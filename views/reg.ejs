@@ -1,0 +1,40 @@
+<%include header %>
+    <div class="container">
+        <form method="post">
+            <div class="panel-lite" style="opacity: 0.9;border-radius: 20px;">
+                <div class="thumbur">
+                    <div class="icon-lock"></div>
+                </div>
+                <h4>用户注册</h4>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" required>
+                    <label class="form-label">用户名</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" required>
+                    <label class="form-label">密　码</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password-repeat" required>
+                    <label class="form-label">确　认</label>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" required>
+                    <label class="form-label">邮　箱</label>
+                </div>
+                <br>
+                <input type="submit" class="floating-btn  btn-large " value="ok">
+                <li style="list-style-type:none">
+                    <label>
+                        <input type="checkbox" checked="checked" value="agree" name="" required>我同意
+                    </label>
+                    <a href="#">用户协议</a>
+                    <a href="/login" class="pull-right">已有账号</a>
+                </li>
+                <div class="text-center" style="height:20px;">
+                    <span class="text-danger"><%= error %></span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <%include footer %>

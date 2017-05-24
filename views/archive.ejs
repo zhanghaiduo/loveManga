@@ -1,0 +1,32 @@
+<% include header %>
+    <div class="container">
+        <main class="col-md-12 column">
+            <div class="row clearfix nav-tabs" style="padding:20px">
+                <div class="pull-right" style="padding-right:30px">
+                    <img style="width:400px;height:400px;" src="images/laoshi.png" alt="">
+                    <div style="margin-left:80px;">
+                    </div>
+                </div>
+                <% var lastday = 0 %>
+                    <% posts.forEach(function(post,index){ %>
+                        <% if(lastday != post.time.day ) {%>
+                            <h2>
+                                <%= post.time.day %>
+                            </h2>
+                            <hr>
+                            <h4>
+                                </li>
+                                <% lastday = post.time.day }%>
+                                    <li><time><%= post.time.day %></time></li>
+                                    <li>
+                                        <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                                            <%= post.title %>
+                                        </a>
+                                    </li>
+                                    <% }) %>
+                            </h4>
+            </div>
+            <br><br><br>
+        </main>
+    </div>
+    <% include footer %>

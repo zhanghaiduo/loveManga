@@ -1,0 +1,32 @@
+<% include header %>
+    <div class="container">
+        <form method="post" method="post">
+            <div class="panel-lite" style="opacity: 0.9;border-radius: 20px">
+                <div class="thumbur">
+                    <div class="icon-lock"></div>
+                </div>
+                <h4>用户登录</h4>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" required>
+                    <label class="form-label">用户名</label>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" required>
+                    <label class="form-label">密　码</label>
+                </div>
+                <br>
+                <input type="submit" class="floating-btn" value="GO">
+                <div class="mod-footer">
+                    <input id="login-radio" type="checkbox" value="1" name="net_auto_login" checked="checked" required>
+                    <label for="login-radio">记住我</label>
+                    <a href="#">&nbsp;&nbsp;忘记密码</a>
+                    <span>还没有账号?</span>&nbsp;&nbsp;
+                    <a href="/reg">立即注册</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class="text-center" style="height:20px;">
+                    <span class="text-danger"><%= error %></span>
+                </div>
+            </div>
+        </form>
+    </div>
+    <%include footer %>

@@ -1,0 +1,21 @@
+<% include header %>
+    <div class="container">
+        <main class="col-md-12 column">
+            <div class="col-md-8 ">
+                <ul class="archive">
+                    <% posts.forEach(function(post,index){ %>
+                        <li>
+                            <%= post.time.day %>
+                        </li>
+                        <li>
+                            <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                                <%= post.title %>
+                            </a>
+                        </li>
+                        <% }) %>
+                </ul>
+            </div>
+            <div class="pull-right col-md-4 ">
+                <img style="width:400px;height:400px;" src="/images/laoshi.png" alt="">
+            </div>
+            <% include footer %>

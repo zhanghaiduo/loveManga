@@ -1,0 +1,50 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: beige;
+    font-family: Alegreya Sans, sans-serif;
+    background-image: url('/images/beijing.jpg');
+    background-size: cover;
+}
+
+.nav img {
+    width: 40px;
+    height: 40px;
+    /*vertical-align: middle;*/
+}
+
+.nav h4 {
+    margin: 0 0 3px;
+    padding-right: 200px;
+    font-size: 14px;
+    word-wrap: break-word;
+    line-height: 1.7;
+    /*vertical-align: middle;*/
+}
+
+main {
+    background-color: white;
+    opacity: 0.9;
+    border-radius: 20px
+}
+
+.container {
+    padding-top: 60px;
+    /*padding-bottom: 50px*/
+}
+
+li {
+    list-style-type: none;
+}
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#goTop {
+    cursor: pointer
+}

@@ -1,0 +1,28 @@
+<%include header %>
+
+    <div class="container">
+        <main class="col-md-12 column">
+            <div class="row clearfix col-md-8 " style="padding:20px">
+                <% posts.forEach(function(post,index){ %>
+                    <ul>
+                        <li>
+                            <%= post.time.day %>
+                        </li>
+                        <li>
+                            <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                                <%= post.title %>
+                            </a>
+                        </li>
+                    </ul>
+                    <% }) %>
+
+
+            </div>
+            <div class="pull-right col-md-4 ">
+                <img style="width:400px;height:400px;" src="/images/laoshi.png" alt="">
+            </div>
+
+            <br><br><br>
+        </main>
+    </div>
+    <% include footer %>

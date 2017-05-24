@@ -1,0 +1,206 @@
+<% include header %>
+    </nav>
+    <link rel="stylesheet" href="/stylesheets/lunbo.css">
+    <div class="container">
+        <main class="col-md-12 column">
+            <div class="row clearfix">
+                <div class="col-md-9 column" style="border-right:1px solid  #F6DB98;">
+                    <ul class="nav nav-tabs" style="margin:10px">
+                        <li class="dropdown pull-left" style="font-size:30px;">
+                            <img style="margin-bottom:10px" src="/images/touxiang.png" alt=""><span>&#x3000;发现</span>
+                        </li>
+
+                        <li class="dropdown pull-right">
+                            <a href="#">热门</a>
+                        </li>
+
+                        <li class="dropdown pull-right">
+                            <a href="#">最新</a>
+                        </li>
+                    </ul>
+                    <!--轮播-->
+                    <div class="banner">
+                        <a class="banner_img_a show" target="_blank" style="display: none;">
+                            <img src="/images/1.jpg" alt="">
+                        </a>
+
+                        <a class="banner_img_a" target="_blank" style="display: none;">
+                            <img src="/images/2.jpg" alt="">
+                        </a>
+
+                        <a class="banner_img_a" target="_blank" style="display: inline;">
+                            <img src="/images/3.jpg" alt="">
+                        </a>
+
+                        <a class="banner_img_a" target="_blank" style="display: none;">
+                            <img src="/images/4.jpg" alt="">
+                        </a>
+
+                        <a class="banner_img_a" target="_blank" style="display: none;">
+                            <img src="/images/5.jpg" alt="">
+                        </a>
+
+                        <div class="indicator">
+
+                            <span class="">1</span>
+
+                            <span class="">2</span>
+
+                            <span class="cur">3</span>
+
+                            <span class="">4</span>
+
+                            <span class="">5</span>
+
+                        </div>
+                        <div class="page">
+                            <span class="prev">&lt;</span>
+                            <span class="next">&gt;</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="nav" style="margin:10px">
+                        <% posts.forEach(function (post, index) { %>
+                            <div>
+                                <a class="pull-left" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><img src="images/avatar.jpg" alt=""></a>
+                                <div style="margin-left:50px">
+                                    <h3>
+                                        <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                                            <%= post.title %>
+                                        </a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div style="margin-left:50px">
+                                <h4>
+                                    <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                                        <%- post.post %>
+                                    </a>
+                                </h4>
+                                <a class="pull-right" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">回复</a>
+                                <span class="pull-right">阅读：<%= post.pv %> | 评论：<%= post.comments.length %>&#x3000;</span>
+                                <p>
+                                    发起人：
+                                    <a href="/u/<%= post.name %>">
+                                        <%= post.name %>
+                                    </a>
+                                    <span>| 日期：<%= post.time.minute %>
+                                    | 标签：
+                                     <% post.tags.forEach(function (tag, index) { %>
+                                    <% if (tag) { %>
+                           <a  href="/tags/<%= tag %>">
+                            <%= tag %>
+                        </a>
+                        <% } %>
+                            <% }) %></span>
+                                </p>
+                            </div>
+                            <hr>
+                            <% }) %>
+                                <ul class="pagination pull-right">
+                                    <%- include paging %>
+                                </ul>
+                    </div>
+                    <hr class="xs-hide">
+                </div>
+                <div class=" col-md-3 column ">
+                    <br>
+                    <ul class="nav nav-tabs">
+                        <div class=" pull-left">
+                            <span>活跃用户</span>
+                        </div>
+                        <div class="emoji  emoji--haha">
+                            <div class="emoji__face">
+                                <div class="emoji__eyes"></div>
+                                <div class="emoji__mouth">
+                                    <div class="emoji__tongue"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <li class="dropdown pull-right">
+                            <a style="margin-top:-10px" href=""></a>
+                        </li>
+                        <br>
+                        <br>
+
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-md-3 column">
+                    <ul class="nav">
+                        <br>
+                        <div class=" pull-left">
+                            <span>热门话题</span>
+                        </div>
+                        <li class="dropdown pull-right">
+                            <a style="margin-top:-10px" href="/tags">更多></a>
+                        </li>
+                        <br> <br>
+
+                    </ul>
+
+                </div>
+                <div class="pull-right col-md-3" style="right:20px;">
+                    <img style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        $(function() {
+
+
+            // 轮播
+            var index = 0;
+
+            function getIndexNext() {
+                return index >= $(".banner .banner_img_a").length - 1 ? 0 : index + 1;
+            }
+
+            function getIndexPrev() {
+                return index <= 0 ? $(".banner .banner_img_a").length - 1 : index - 1;
+            }
+            var showNextImg = function() {
+                index = getIndexNext();
+                showSliderImg();
+            };
+            var showPrevImg = function() {
+                index = getIndexPrev();
+                showSliderImg();
+            };
+            var sliderTimer = window.setInterval(showNextImg, 2000);
+
+            function showSliderImg() {
+                $(".banner .banner_img_a").eq(index).show();
+                $(".banner .banner_img_a").eq(index).siblings(".banner_img_a").hide();
+                $('.banner .indicator span').removeClass("cur");
+                $('.banner .indicator span').eq(index).addClass("cur");
+            }
+            // slider hover状态
+            $('.banner .indicator span').hover(function() {
+                window.clearInterval(sliderTimer);
+                index = $('.banner .indicator span').index(this);
+                showSliderImg();
+            }, function() {
+                sliderTimer = window.setInterval(showNextImg, 2000);
+            });
+            // previous next
+            $('.banner .page span').hover(function() {
+                window.clearInterval(sliderTimer);
+            }, function() {
+                sliderTimer = window.setInterval(showNextImg, 2000);
+            });
+            $('.banner .page .prev').click(function() {
+                showPrevImg();
+            });
+            $('.banner .page .next').click(function() {
+                showNextImg();
+            });
+        })
+    </script>
+    <% include footer %>
