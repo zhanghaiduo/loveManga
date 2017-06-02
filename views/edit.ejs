@@ -1,16 +1,15 @@
 <% include header %>
-    <div class="container">
-        <main class="col-md-12 column">
-            <br>
-            <form method="post" action="/edit/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
-                <label>标题:</label><br>
-                <input type="text" class="form-control" name="title" value="<%= post.title %>" disabled="disabled" style="width:200px;"><br>
-                <label>正文:</label><br>
-                <textarea cols="100" rows="10" name="post"><%= post.post %></textarea><br>
-                <input class="btn btn-success pull-right" type="submit" value="提交"><br>
-            </form>
-            <br><br>
-        </main>
+    <main class="col-md-12 column">
+        <br>
+        <form method="post" action="/edit/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+            <label>标题:</label><br>
+            <input type="text" class="form-control" name="title" value="<%= post.title %>" disabled="disabled" style="width:200px;border-radius: 5px;"><br>
+            <label>正文:</label><br>
+            <textarea cols="100" rows="10" name="post"><%= post.post %></textarea><br>
+            <input class="btn btn-success pull-right" type="submit" value="提交" style="border-radius: 5px;"><br>
+        </form>
+        <br><br>
+    </main>
     </div>
     <script>
         var simplemde1 = new SimpleMDE({

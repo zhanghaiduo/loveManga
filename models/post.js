@@ -14,7 +14,7 @@ function Post(name, title, tags, post) {
     this.tags = tags;
     this.post = post;
 }
-module.exports = Post;
+
 //保存文章
 Post.prototype.save = function(callback) {
         var date = new Date();
@@ -144,7 +144,7 @@ Post.getOne = function(name, minute, title, callback) {
                     doc.comments.forEach(function(comment) {
                         comment.content = markdown.toHTML(comment.content);
                     })
-                    callback(null, doc);
+                    return callback(null, doc);
                 })
             })
         })
@@ -335,3 +335,4 @@ Post.search = function(keyword, callback) {
         })
     })
 }
+module.exports = Post;

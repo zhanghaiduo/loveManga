@@ -81,7 +81,7 @@ app.use(function(err, req, res, next) {
     });
 });
 //让整个应用启动起来
-app.listen(3000, function() {
+app.listen(3001, function() {
     console.log('node is OK');
 })
 module.exports = app;

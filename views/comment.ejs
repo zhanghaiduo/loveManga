@@ -16,27 +16,12 @@
                 <%= user.name %>
                     <input type="hidden" name="name" value="<%= user.name %>" /><br><br>
                     <textarea name="content" rows="5" cols="80"></textarea><br>
-                    <input class="btn btn-success" type="submit" value="留言" />
+                    <input style="border-radius: 5px;" class="btn btn-success pull-right" type="submit" value="留言" />
             </form>
             <% }else{ %>
                 <form method="post">
-                    回应请先<a href="/login">登录</a>或<a href="/reg">注册</a>
-                    <textarea name="content" rows="5" cols="80" id="tb"></textarea><br>
-                    <input class="btn btn-success" type="submit" value="留言" id="sb" />
+                    <textarea name="content" rows="5" cols="80" id="tb"></textarea><br> 回应请先
+                    <a class="color<%= Math.floor(Math.random() * 7) %>" href="/login">登录</a>或<a class="color<%= Math.floor(Math.random() * 7) %>" href="/reg">注册</a>
+                    <br> <br>
                 </form>
                 <% } %>
-
-
-                    <script>
-                        window.onload = function() {
-                            var textarea = document.querySelector('#tb');
-                            var button = document.querySelector('#sb');
-                            button.onclick = function(e) {
-                                e.preventDefault();
-                                location.href = '/login';
-                            }
-                            textarea.onfocus = function() {
-                                location.href = '/login';
-                            }
-                        }
-                    </script>

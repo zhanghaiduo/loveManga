@@ -1,29 +1,32 @@
 <% include header %>
-    <div class="container">
-        <main class="col-md-12 column">
-            <div class="col-md-9 column">
-                <br>
-                <form method="post">
-                    <label>标题:</label></br>
-                    <input class="form-control" type="text" name="title"></br>
-                    <label>标签:</label></br>
-                    <input class="form-control col-md-3 column" type="text" name="tag1" style="width:200px;margin-top:5px;margin-right:100px;">
-                    <input class="form-control col-md-3 column" type="text" name="tag2" style="width:200px;margin-top:5px;margin-right:100px;">
-                    <input class="form-control col-md-3 column" type="text" name="tag3" style="width:200px;margin-top:5px;">
-                    </br>
-                    </br>
-                    </br>
-                    <label>正文:</label>
-                    </br>
-                    <textarea name="post" cols="100" rows="10"></textarea></br>
-                    <input class="btn btn-success pull-right" type="submit" value="发表">
-                </form>
-            </div>
-            <div class="pull-right col-md-3">
-                <img style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
-            </div>
-        </main>
-    </div>
+    <main class="col-md-12 column">
+        <div class="col-md-9 column">
+            <br>
+            <form method="post">
+                <label>标题:</label></br>
+                <input class="form-control" type="text" name="title" style="border-radius:10px;"></br>
+                <label>标签:</label></br>
+                <input class="form-control col-md-3 column" type="text" name="tag1" style="width:180px;margin-top:5px;margin-right:100px;border-radius:10px;">
+                <input class="form-control col-md-3 column" type="text" name="tag2" style="width:180px;margin-top:5px;margin-right:100px;border-radius:10px;">
+                </br>
+                </br>
+                </br>
+                <label>正文:</label>
+                </br>
+                <textarea name="post" cols="100" rows="10"></textarea></br>
+                <input style="border-radius:20px;" class="btn btn-success pull-right" type="submit" value="发表">
+                <br> <br><br>
+            </form>
+        </div>
+        <div class="pull-right col-md-3">
+            <img class=" animated fadeInDownBig" style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
+        </div>
+        <div class="pull-right col-md-3  animated fadeInDownBig">
+            <h3>友情提示：</h3>
+            <p>大家友好发表观点，不要随意攻击</p>
+        </div>
+    </main>
+    </div> <br> <br>
     </div>
     <script>
         var simplemde1 = new SimpleMDE({
@@ -32,4 +35,5 @@
             styleSelectedText: false,
         });
     </script>
+
     <% include footer %>

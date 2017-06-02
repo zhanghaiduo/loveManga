@@ -1,6 +1,6 @@
 <%include header %>
     <div class="container">
-        <form method="post">
+        <form method="post" class="animated fadeIn">
             <div class="panel-lite" style="opacity: 0.9;border-radius: 20px;">
                 <div class="thumbur">
                     <div class="icon-lock"></div>
@@ -28,7 +28,7 @@
                     <label>
                         <input type="checkbox" checked="checked" value="agree" name="" required>我同意
                     </label>
-                    <a href="#">用户协议</a>
+                    <a type="button" title="用户协议" data-container="body" data-toggle="popover" data-placement="top" data-content="本网站仅供学习交流，禁止用于任何商业用途，请文明发言.">用户协议</a>
                     <a href="/login" class="pull-right">已有账号</a>
                 </li>
                 <div class="text-center" style="height:20px;">
@@ -37,4 +37,9 @@
             </div>
         </form>
     </div>
+    <script>
+        $(function() {
+            $("[data-toggle='popover']").popover();
+        });
+    </script>
     <%include footer %>

@@ -1,7 +1,7 @@
 .emoji {
-    width: 120px;
-    height: 120px;
-    margin: 15px;
+    width: 80px;
+    height: 80px;
+    /*margin: 15px;*/
     background: #FFDA6A;
     display: inline-block;
     border-radius: 50%;
@@ -53,21 +53,22 @@
     height: inherit;
 }
 
-.emoji--haha:after {
+
+/*.emoji--haha:after {
     text-align: center;
     content: '张棋';
-}
+}*/
 
 .emoji--haha .emoji__face {
     animation: haha-face 2s linear infinite;
 }
 
 .emoji--haha .emoji__eyes {
-    width: 26px;
+    width: 24px;
     height: 6px;
     border-radius: 2px;
-    left: calc(50% - 13px);
-    top: 35px;
+    left: calc(50% - 12px);
+    top: 25px;
     transform: rotate(20deg);
     background: transparent;
     box-shadow: -25px 5px 0 0 #000000, 25px -5px 0 0 #000000;
@@ -76,7 +77,7 @@
 .emoji--haha .emoji__eyes:after {
     left: 0;
     top: 0;
-    width: 26px;
+    width: 24px;
     height: 6px;
     border-radius: 2px;
     transform: rotate(-40deg);
@@ -85,24 +86,24 @@
 }
 
 .emoji--haha .emoji__mouth {
-    width: 80px;
-    height: 40px;
-    left: calc(50% - 40px);
+    width: 30px;
+    height: 24px;
+    left: calc(50% - 15px);
     top: 50%;
     background: #000000;
-    border-radius: 0 0 40px 40px;
+    border-radius: 0 0 20px 20px;
     overflow: hidden;
     z-index: 1;
     animation: haha-mouth 2s linear infinite;
 }
 
 .emoji--haha .emoji__tongue {
-    width: 70px;
-    height: 30px;
+    width: 60px;
+    height: 22px;
     background: #F55064;
     left: calc(50% - 35px);
     bottom: -10px;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 @keyframes haha-face {

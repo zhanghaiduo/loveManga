@@ -1,62 +1,67 @@
 <%- include header %>
-    <div class="container">
-        <main class="col-md-12 column">
-            <div class="row clearfix ">
-                <div class="col-md-9 column" style="border-right:1px solid  #C8A55F;">
+    <br>
 
-                    <h3 class="pull-right">作者：
-                        <a href="/u/<%= post.name %>">
-                            <%= post.name %>
-                        </a>
-                    </h3>
-                    <h2>
-                        <%- title %>
-                    </h2>
-                    <br>日期：
-                    <%= post.time.minute %>&#x3000;标签：
-                        <% post.tags.forEach(function (tag, index) { %>
-                            <% if (tag) { %>
-                                <a class="tag" href="/tags/<%= tag %>">
-                                    <%= tag %>
-                                </a>
-                                <% } %>
-                                    <% }) %>
-                                        阅读：
-                                        <%= post.pv %>&#x3000;评论：
-                                            <%= post.comments.length %>
-                                                <% if( user && user.name == post.name ){ %>
-                                                    <br>
-                                                    <br>
-                                                    <span><a class="btn btn-primary" href="/edit/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">编辑</a></span>
-                                                    <span><a class="btn btn-primary" href="/remove/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">删除</a></span>
-                                                    <% } %>
-                                                        <hr>
-                                                        <h3>内容</h3>
-                                                        <div class="aw-mod aw-replay-box">
-                                                            <p>
-                                                                <%- post.post %>
-                                                            </p>
-                                                        </div>
-                                                        <% include comment %>
-                                                            <br>
-                                                            <br>
-                </div>
+    <main class="col-md-12 column">
+        <div class="row clearfix ">
+            <div class="col-md-9 column">
+                <h3 class="pull-right">作者：
+                    <a href="/u/<%= post.name %>">
+                        <%= post.name %>
+                    </a>
+                </h3>
+                <h2>
+                    <%- title %>
+                </h2>
+                <br>日期：
+                <%= post.time.minute %>&#x3000;标签：
+                    <% post.tags.forEach(function (tag, index) { %>
+                        <% if (tag) { %>
+                            <a class="tag" href="/tags/<%= tag %>">
+                                <%= tag %>
+                            </a>
+                            <% } %>
+                                <% }) %>
+                                    阅读：
+                                    <%= post.pv %>&#x3000;评论：
+                                        <%= post.comments.length %>
+                                            <% if( user && user.name == post.name ){ %>
+                                                <br>
+                                                <br>
+                                                <span><a class="color<%= Math.floor(Math.random() * 7) %>" href="/edit/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">编辑</a></span>
+                                                <span><a class="color<%= Math.floor(Math.random() * 7) %>" href="/remove/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">删除</a></span>
+                                                <% } %>
+                                                    <hr>
+                                                    <h3>内容</h3>
+                                                    <div class="aw-mod aw-replay-box">
+                                                        <p>
+                                                            <%- post.post %>
+                                                        </p>
+                                                    </div>
+                                                    <hr>
+                                                    <% include comment %>
+                                                        <br>
+                                                        <br>
+            </div>
 
 
-                <div class="pull-right col-md-3">
-                    <img style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
-                </div>
-                <br>
-                <br>
+            <div class="pull-right col-md-3">
+                <img class=" animated fadeInDownBig" style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
+            </div>
+            <div class="pull-right col-md-3">
+                <h3 class=" animated fadeInDownBig">友情提示：</h3>
+                <p class=" animated fadeInDownBig">大家友好发表观点，不要随意攻击</p>
+            </div>
+            <br>
+            <br>
 
-        </main>
-        </div>
-        <script>
-            var simplemde1 = new SimpleMDE({
-                element: $("#liuyan")[0],
-                status: false,
-                styleSelectedText: false,
-            });
-        </script>
+    </main>
+    </div>
+    <script>
+        var simplemde1 = new SimpleMDE({
+            element: $("#liuyan")[0],
+            status: false,
+            styleSelectedText: false,
+        });
+    </script>
 
-        <%- include footer %>
+    <%- include footer %>

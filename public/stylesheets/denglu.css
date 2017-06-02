@@ -125,7 +125,7 @@ html {
     position: absolute;
     z-index: 1;
     left: 0;
-    top: 5px;
+    top: -2px;
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }

@@ -1,69 +1,71 @@
 <% include header %>
-    <div class="container">
-        <main class="col-md-12 column">
-            <div class="row clearfix">
-                <div class="col-md-9 column" style="border-right:1px solid  #C8A55F;">
-                    <ul class="nav nav-tabs " style="margin:10px;color:#333333 ">
-                        <li class="dropdown pull-left " style="font-size:30px;margin-bottom: 10px ">
-                            <span class="glyphicon glyphicon-fire " style="font-size:28px; "></span><span>&#x3000;热门话题</span>
-                        </li>
-                        <li class=" pull-right ">
-                            <a href="# ">三十天</a>
-                        </li>
+    <main class="col-md-12 column">
+        <div class="row clearfix">
+            <div class="col-md-9 column">
+                <ul class="nav nav-tabs " style="margin:10px;color:#333333 ">
+                    <li class="dropdown pull-left " style="font-size:30px;margin-bottom: 10px ">
+                        <span class="glyphicon glyphicon-fire " style="font-size:28px; color:orange"></span><span>&#x3000;热门话题</span>
+                    </li>
+                    <li class=" pull-right ">
+                        <a style="color:#555">三十天</a>
+                    </li>
 
-                        <li class="pull-right ">
-                            <a href="# ">七天</a>
-                        </li>
-                        <li class=" pull-right ">
-                            <a href="# ">全部</a>
-                        </li>
+                    <li class="pull-right ">
+                        <a style="color:#555">七天</a>
+                    </li>
+                    <li class="active pull-right ">
+                        <a href="# ">全部</a>
+                    </li>
 
-                    </ul>
-                    <% posts.forEach(function(tag,index){ %>
-                        <div class="col-md-6 column nav" style="margin-top:20px ">
-                            <div>
-                                <a class="pull-left" href=" "><img src="/images/laoshi.png " alt=" "></a>
-                            </div>
-                            <div style="margin-left:50px; ">
-                                <h4>
-                                    <a class="btn btn-success " href="/tags/<%= tag %>">
-                                        <%= tag %>
-                                    </a>
-                                </h4>
-                                <p> 999个讨论 39个关注</p>
-                                <p>7天新增 999个讨论，30天新增 4个讨论</p>
-                            </div>
-                            <hr>
+                </ul>
+                <% posts.forEach(function(tag,index){ %>
+                    <div class="col-md-6 col-xs-6 column nav" style="margin-top:20px ">
+                        <div>
+                            <a class="pull-left" href=" "><img src="/images/laoshi.png " alt=" "></a>
                         </div>
-                        <%  }) %>
-                            <p> <a class="pagination pull-right " style="margin-top:100px;" href="# ">...更多>></a></p>
-                </div>
-                <div class=" col-md-3 column ">
-                    <br>
-                    <div class=" pull-left ">
-                        <span>全部话题</span>
+                        <div style="margin-left:50px; " class=" animated swing">
+                            <h4>
+                                <a class=" color<%= Math.floor(Math.random() * 7) %>" href="/tags/<%= tag %>">
+                                    <%= tag %>
+                                </a>
+                            </h4>
+                            <p>
+                                <%= Math.floor(Math.random() * 5000) %>个讨论&#x3000;
+                                    <%= Math.floor(Math.random() * 2000) %>个关注</p>
+                        </div>
+                        <hr>
                     </div>
-                    <br>
-                    <hr>
+                    <%  }) %>
+                        <p> <a class="pagination pull-right " style="margin-top:100px;" href="# ">更多...</a></p>
+            </div>
+            <div class=" col-md-3 column ">
+                <br>
+                <div class=" pull-left ">
+                    <MARQUEE DIRECTION=LEFT BEHAVIOR=SCROLL SCROLLAMOUNT=10 SCROLLDELAY=200><span>这里有许多有趣的话题,快来讨论吧</span></MARQUEE>
                 </div>
-                <div class="pull-right col-md-3" style="right:20px;">
-                    <img style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
+                <br>
+                <hr>
+            </div>
+            <div class="pull-right col-md-3" style="right:20px;">
+                <img class=" animated fadeIn" style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
+            </div>
+            <div class=" col-md-3 column ">
+                <div class=" pull-left ">
+                    <span>新增话题</span>
                 </div>
-                <div class="col-md-3 column ">
-                    <div class=" pull-left ">
-                        <span>新增话题</span>
-                    </div>
-                    <br> <br>
+                <br> <br>
+                <div class=" animated fadeIn">
                     <% posts.forEach(function(tag,index){ %>
-                        <a class="btn btn-success " href="/tags/<%= tag %>">
+                        <a style="margin:10px;margin-top:0px" class="color<%= Math.floor(Math.random() * 7) %> col-md-2 col-xs-2" href="/tags/<%= tag %>">
                             <%= tag %>
                         </a>
                         <%  }) %>
-                            <br> <br> <br>
                 </div>
-
+                <br> <br> <br>
             </div>
-        </main>
+
+        </div>
+    </main>
 
     </div>
     <% include footer %>

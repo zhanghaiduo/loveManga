@@ -1,206 +1,148 @@
 <% include header %>
-    </nav>
-    <link rel="stylesheet" href="/stylesheets/lunbo.css">
-    <div class="container">
-        <main class="col-md-12 column">
-            <div class="row clearfix">
-                <div class="col-md-9 column" style="border-right:1px solid  #F6DB98;">
-                    <ul class="nav nav-tabs" style="margin:10px">
-                        <li class="dropdown pull-left" style="font-size:30px;">
-                            <img style="margin-bottom:10px" src="/images/touxiang.png" alt=""><span>&#x3000;发现</span>
-                        </li>
-
-                        <li class="dropdown pull-right">
-                            <a href="#">热门</a>
-                        </li>
-
-                        <li class="dropdown pull-right">
-                            <a href="#">最新</a>
-                        </li>
-                    </ul>
-                    <!--轮播-->
-                    <div class="banner">
-                        <a class="banner_img_a show" target="_blank" style="display: none;">
-                            <img src="/images/1.jpg" alt="">
-                        </a>
-
-                        <a class="banner_img_a" target="_blank" style="display: none;">
-                            <img src="/images/2.jpg" alt="">
-                        </a>
-
-                        <a class="banner_img_a" target="_blank" style="display: inline;">
-                            <img src="/images/3.jpg" alt="">
-                        </a>
-
-                        <a class="banner_img_a" target="_blank" style="display: none;">
-                            <img src="/images/4.jpg" alt="">
-                        </a>
-
-                        <a class="banner_img_a" target="_blank" style="display: none;">
-                            <img src="/images/5.jpg" alt="">
-                        </a>
-
-                        <div class="indicator">
-
-                            <span class="">1</span>
-
-                            <span class="">2</span>
-
-                            <span class="cur">3</span>
-
-                            <span class="">4</span>
-
-                            <span class="">5</span>
-
-                        </div>
-                        <div class="page">
-                            <span class="prev">&lt;</span>
-                            <span class="next">&gt;</span>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="nav" style="margin:10px">
-                        <% posts.forEach(function (post, index) { %>
-                            <div>
-                                <a class="pull-left" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>"><img src="images/avatar.jpg" alt=""></a>
-                                <div style="margin-left:50px">
-                                    <h3>
-                                        <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
-                                            <%= post.title %>
-                                        </a>
-                                    </h3>
+    <div class="container-wrap">
+        <aside id="fh5co-hero">
+            <div class="flexslider">
+                <ul class="slides" style="height:350px;">
+                    <li style="background-image: url(images/BG2.jpg);">
+                        <div class="overlay-gradient"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-md-pull-3 slider-text">
+                                    <div class="slider-text-inner">
+                                        <h1 style="background:white;padding:5px;width:313px;border-radius:5px;">欢迎来到漫画交流空间</h1>
+                                        <p>
+                                            <a class="color<%= Math.floor(Math.random() * 7) %>" href="#"></i>关于我</a> <a href="#" class="color<%= Math.floor(Math.random() * 7) %>">了解更多</a></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div style="margin-left:50px">
-                                <h4>
-                                    <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
-                                        <%- post.post %>
+                        </div>
+                    </li>
+                    <li style="background-image: url(images/BG1.jpg);">
+                        <div class="overlay-gradient"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-md-push-3 slider-text">
+                                    <div class="slider-text-inner">
+                                        <h1 style="background:white;padding:5px;width:313px;border-radius:5px;">在这里有很好玩的知识</h1>
+                                        <p>
+                                            <a class="color<%= Math.floor(Math.random() * 7) %>" href="#"></i>关于我</a> <a href="#" class="color<%= Math.floor(Math.random() * 7) %>">了解更多</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="background-image: url(images/BG3.jpg);">
+                        <div class="overlay-gradient"></div>
+                        <div class="container-fluids">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 slider-text">
+                                    <div class="slider-text-inner text-center">
+                                        <h1 style="background:white;padding:5px;width:313px;border-radius:5px;">在这可以交到许多朋友</h1>
+                                        <p>
+                                            <a class="color<%= Math.floor(Math.random() * 7) %>" href="#"></i>关于我</a> <a href="#" class="color<%= Math.floor(Math.random() * 7) %>">了解更多</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="background-image: url(images/BG4.jpg);">
+                        <div class="overlay-gradient"></div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 col-md-push-3 slider-text">
+                                    <div class="slider-text-inner">
+                                        <h1 style="background:white;padding:5px;width:313px;border-radius:5px;">这里非常期待你的加入</h1>
+                                        <p>
+                                            <a class="color<%= Math.floor(Math.random() * 7) %>" href="#"></i>关于我</a> <a href="#" class="color<%= Math.floor(Math.random() * 7) %>">了解更多</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <div id="fh5co-counter" class="fh5co-counters">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center animate-box">
+                    <p>热爱漫画，热爱生活</p>
+                </div>
+            </div>
+            <div class="row animate-box">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6 text-center">
+                            <span class="fh5co-counter js-counter" data-from="0" data-to="3616" data-speed="7000" data-refresh-interval="50"></span>
+                            <span class="fh5co-counter-label">累计点赞</span>
+                        </div>
+                        <div class="col-md-3 col-xs-6 text-center">
+                            <span class="fh5co-counter js-counter" data-from="0" data-to="665" data-speed="7000" data-refresh-interval="50"></span>
+                            <span class="fh5co-counter-label">累计会员</span>
+                        </div>
+                        <div class="col-md-3 col-xs-6 text-center">
+                            <span class="fh5co-counter js-counter" data-from="0" data-to="8145" data-speed="7000" data-refresh-interval="50"></span>
+                            <span class="fh5co-counter-label">累计回复</span>
+                        </div>
+                        <div class="col-md-3 col-xs-6 text-center">
+                            <span class="fh5co-counter js-counter" data-from="0" data-to="10967" data-speed="7000" data-refresh-interval="50"></span>
+                            <span class="fh5co-counter-label">累计浏览</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="fh5co-blog" style="position:relative;">
+            <div class="row">
+                <% posts.forEach(function (post, index) { %>
+                    <div class="col-md-4 ">
+                        <div class="fh5co-blog animate-box">
+                            <a href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>" class="blog-bg" style="background-image: url(images/<%= Math.floor(Math.random() * 11) %>.jpg);border-radius:25px 25px 0 0"></a>
+                            <div class="blog-text" style="border-radius:0 0 25px 25px">
+                                <span class="posted_on"><%= post.time.minute %></span> &#x3000;
+                                <h2>
+                                    <a style="color:black" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                                        <%= post.title %>
                                     </a>
-                                </h4>
-                                <a class="pull-right" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">回复</a>
-                                <span class="pull-right">阅读：<%= post.pv %> | 评论：<%= post.comments.length %>&#x3000;</span>
+                                </h2>
                                 <p>
-                                    发起人：
+                                    <div style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                        <a style="color:gray;" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">
+                                            ...<%- post.post %>
+                                        </a>
+                                    </div>
+                                    作者：
                                     <a href="/u/<%= post.name %>">
                                         <%= post.name %>
                                     </a>
-                                    <span>| 日期：<%= post.time.minute %>
-                                    | 标签：
-                                     <% post.tags.forEach(function (tag, index) { %>
-                                    <% if (tag) { %>
-                           <a  href="/tags/<%= tag %>">
-                            <%= tag %>
-                        </a>
-                        <% } %>
-                            <% }) %></span>
+                                    <span class="pull-right"> 标签：<% post.tags.forEach(function (tag, index) { %>
+                                                        <% if (tag) { %>
+                                                            <a style="color:orange" href="/tags/<%= tag %>">
+                                                                <%= tag %>
+                                                            </a>
+                                                            <% } %>
+                                                                <% }) %>
+                                                                </span>
                                 </p>
-                            </div>
-                            <hr>
-                            <% }) %>
-                                <ul class="pagination pull-right">
-                                    <%- include paging %>
+                                <ul class="stuff">
+                                    <li><span class="glyphicon glyphicon-comment"></span></i>
+                                        <%= post.comments.length %>
+                                    </li>
+                                    <li><span class="glyphicon glyphicon-heart-empty"></span></i>
+                                        <%= post.pv %>
+                                    </li>
+                                    <a class="pull-right" href="/u/<%= post.name %>/<%= post.time.minute %>/<%= post.title %>">回复</a>
                                 </ul>
-                    </div>
-                    <hr class="xs-hide">
-                </div>
-                <div class=" col-md-3 column ">
-                    <br>
-                    <ul class="nav nav-tabs">
-                        <div class=" pull-left">
-                            <span>活跃用户</span>
-                        </div>
-                        <div class="emoji  emoji--haha">
-                            <div class="emoji__face">
-                                <div class="emoji__eyes"></div>
-                                <div class="emoji__mouth">
-                                    <div class="emoji__tongue"></div>
-                                </div>
                             </div>
+
                         </div>
-                        <li class="dropdown pull-right">
-                            <a style="margin-top:-10px" href=""></a>
-                        </li>
-                        <br>
-                        <br>
-
-
-                    </ul>
-
-                </div>
-
-
-                <div class="col-md-3 column">
-                    <ul class="nav">
-                        <br>
-                        <div class=" pull-left">
-                            <span>热门话题</span>
-                        </div>
-                        <li class="dropdown pull-right">
-                            <a style="margin-top:-10px" href="/tags">更多></a>
-                        </li>
-                        <br> <br>
-
-                    </ul>
-
-                </div>
-                <div class="pull-right col-md-3" style="right:20px;">
-                    <img style="width:300px;height:300px;" src="/images/laoshi.png" alt="">
-                </div>
+                    </div>
+                    <% }) %>
+                        <ul style="position:absolute;bottom:-30px;right:30px; ">
+                            <%- include paging %>
+                        </ul>
             </div>
 
-        </main>
+        </div>
     </div>
 
-    <script>
-        $(function() {
-
-
-            // 轮播
-            var index = 0;
-
-            function getIndexNext() {
-                return index >= $(".banner .banner_img_a").length - 1 ? 0 : index + 1;
-            }
-
-            function getIndexPrev() {
-                return index <= 0 ? $(".banner .banner_img_a").length - 1 : index - 1;
-            }
-            var showNextImg = function() {
-                index = getIndexNext();
-                showSliderImg();
-            };
-            var showPrevImg = function() {
-                index = getIndexPrev();
-                showSliderImg();
-            };
-            var sliderTimer = window.setInterval(showNextImg, 2000);
-
-            function showSliderImg() {
-                $(".banner .banner_img_a").eq(index).show();
-                $(".banner .banner_img_a").eq(index).siblings(".banner_img_a").hide();
-                $('.banner .indicator span').removeClass("cur");
-                $('.banner .indicator span').eq(index).addClass("cur");
-            }
-            // slider hover状态
-            $('.banner .indicator span').hover(function() {
-                window.clearInterval(sliderTimer);
-                index = $('.banner .indicator span').index(this);
-                showSliderImg();
-            }, function() {
-                sliderTimer = window.setInterval(showNextImg, 2000);
-            });
-            // previous next
-            $('.banner .page span').hover(function() {
-                window.clearInterval(sliderTimer);
-            }, function() {
-                sliderTimer = window.setInterval(showNextImg, 2000);
-            });
-            $('.banner .page .prev').click(function() {
-                showPrevImg();
-            });
-            $('.banner .page .next').click(function() {
-                showNextImg();
-            });
-        })
-    </script>
     <% include footer %>

@@ -1,14 +1,9 @@
-html,
-body {
-    height: 100%;
-}
-
-body {
+/*body {
     background: beige;
     font-family: Alegreya Sans, sans-serif;
     background-image: url('/images/beijing.jpg');
     background-size: cover;
-}
+}*/
 
 .nav img {
     width: 40px;
@@ -17,34 +12,82 @@ body {
 }
 
 .nav h4 {
-    margin: 0 0 3px;
+    /*margin: 0 0 3px;
     padding-right: 200px;
     font-size: 14px;
     word-wrap: break-word;
-    line-height: 1.7;
+    line-height: 1.7;*/
     /*vertical-align: middle;*/
 }
 
 main {
     background-color: white;
-    opacity: 0.9;
-    border-radius: 20px
+    /*opacity: 0.9;
+    border-radius: 20px*/
 }
 
 .container {
-    padding-top: 60px;
+    /*padding-top: 60px;*/
     /*padding-bottom: 50px*/
-}
-
-li {
-    list-style-type: none;
-}
-
-.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 2em 2em;
 }
 
 #goTop {
     cursor: pointer
+}
+
+.color1 {
+    background-color: rgb(137, 190, 178);
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+}
+
+.color2 {
+    background-color: rgb(237, 190, 28);
+    border-radius: 5px;
+    color: white;
+    padding: 5px
+}
+
+.color3 {
+    background-color: rgb(237, 80, 28);
+    border-radius: 5px;
+    color: white;
+    padding: 5px
+}
+
+.color4 {
+    background-color: rgb(27, 180, 28);
+    border-radius: 5px;
+    color: white;
+    padding: 5px
+}
+
+.color5 {
+    background-color: rgb(87, 50, 228);
+    border-radius: 5px;
+    color: white;
+    padding: 5px
+}
+
+.color6 {
+    background-color: rgb(17, 120, 88);
+    border-radius: 5px;
+    color: white;
+    padding: 5px
+}
+
+.color7 {
+    background-color: rgb(7, 10, 208);
+    border-radius: 5px;
+    color: white;
+    padding: 5px
+}
+
+.color0 {
+    background-color: rgb(119, 200, 28);
+    border-radius: 5px;
+    color: white;
+    padding: 5px
 }
